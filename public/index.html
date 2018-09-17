@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello, Computer</title>
+
+
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+  <script src="interface.js"></script>
+  <script src="rita-full.js"></script>
+
+
+  <script src="https://unpkg.com/ml5@0.1.1/dist/ml5.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+  <div id="page-wrapper">
+    <!-- <h1>Hello, Computer</h1> -->
+
+
+    <div class="flex-container">
+      <div class="textbox-padding" >
+
+        <input type="text" placeholder="First" name="speech-msg1" id="speech-msg1" x-webkit-speech>
+        <div class="range-slider">
+          <input class="input-range" orient="vertical" type="range"  id="Pitch1"   step="0.1" value="0" min="-3" max="5">
+        </div>
+      </div>
+
+
+      <div class="textbox-padding" >
+
+        <input type="text" placeholder="First" name="speech-msg1" id="speech-msg2" x-webkit-speech>
+        <div class="range-slider">
+          <input class="input-range" orient="vertical" type="range"  id="Pitch2"   step="0.1" value="0" min="-3" max="5">
+        </div>
+      </div>
+
+      <div class="textbox-padding" >
+
+        <input type="text" placeholder="First" name="speech-msg1" id="speech-msg3" x-webkit-speech>
+        <div class="range-slider">
+          <input class="input-range" orient="vertical" type="range"  id="Pitch3"   step="0.1" value="0" min="-3" max="5">
+        </div>
+      </div>
+
+      <div class="textbox-padding" >
+
+        <input type="text" placeholder="First" name="speech-msg1" id="speech-msg4" x-webkit-speech>
+        <div class="range-slider">
+          <input class="input-range" orient="vertical" type="range"  id="Pitch4"   step="0.1" value="0" min="-3" max="5">
+        </div>
+      </div>
+
+      <div class="textbox-padding" >
+
+        <input type="text" placeholder="First" name="speech-msg1" id="speech-msg5" x-webkit-speech>
+        <div class="range-slider">
+          <input class="input-range" orient="vertical" type="range"  id="Pitch5"   step="0.1" value="0" min="-3" max="5">
+        </div>
+      </div>
+
+      <div class="textbox-padding" >
+
+        <input type="text" placeholder="First" name="speech-msg1" id="speech-msg6" x-webkit-speech>
+        <div class="range-slider">
+          <input class="input-range" orient="vertical" type="range"  id="Pitch6"   step="0.1" value="0" min="-3" max="5">
+        </div>
+      </div>
+
+
+    </div>
+
+    <p id="msg"></p>
+
+
+    <div class="flex-container">
+    <video id ="MediaStreamVideo" autoplay width="700 px" height="100%"></video>
+  </div>
+    <!-- <input type="text" name="speech-msg1" id="speech-msg1" x-webkit-speech> -->
+
+    <div class="option">
+      <label for="voice1">Voice</label>
+      <select name="voice1" id="voice1"></select>
+    </div>
+
+    <button id="speak1">Speak1</button>
+
+  </div>
+
+
+
+
+  <script src="main.js"></script>
+
+</body>
+
+
+</html>
