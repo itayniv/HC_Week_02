@@ -82,18 +82,23 @@ function gotResult(err, results) {
     let currGuess = results[0].className;
     let currGuessProb = results[0].probability;
     // console.log(currGuess);
-    if (currGuessProb >= .6){
+    if (currGuessProb >= .4){
       thingsArr.push(currGuess);
       let i = thingsArr.length;
       if ( thingsArr[i-1] == thingsArr[i-2] ){
-        console.log("same");
+        // console.log("same");
       } else {
           console.log("trigger",thingsArr[i-1]);
           // document.getElementById("result").innerHTML = thingsArr[i-1];
           // playNote(2.6,2);
+
+          for (let i = 0; i < 6; i++) {
+              pitch[i] = document.getElementById("Pitch"+ (i+1)).value;
+          }
           let Currsound = RiTa.similarBySound(thingsArr[i-1]);
           Currsound.length = 10;
           // console.log("Currsound", Currsound[0]);
+
           let speakThis1 = Currsound[0];
           let speakThis2 = Currsound[1];
           let speakThis3 = Currsound[2];
@@ -103,30 +108,50 @@ function gotResult(err, results) {
           let speakThis7 = Currsound[6];
           let speakThis8 = Currsound[7];
 
-          console.log("speakThis", speakThis1);
+          console.log("allwords",thingsArr[i-1], Currsound);
+          console.log(pitch);
 
           // document.getElementById("speech-msg1").innerHTML = Currsound[0];
-          speak(speakThis1, pitch[0]);
-          speak(speakThis2, pitch[1]);
-          speak(speakThis3, pitch[2]);
-          speak(speakThis4, pitch[3]);
-          speak(speakThis5, pitch[4]);
-          speak(speakThis6, pitch[5]);
-          speak(speakThis6, pitch[6]);
-          // speak(speakThis2, pitch[0]);
-          // speak(speakThis3, pitch[0]);
-          // speak(speakThis4, pitch[0]);
-          // speak(speakThis5, pitch[0]);
-          // speak(speakThis6, pitch[0]);
-          // speak(speakThis7, pitch[0]);
-          // speak(speakThis8, pitch[0]);
 
-          // speak(speechMsgInput1.value, pitch[0] );
-          // speak(speechMsgInput2.value, pitch[1] );
-          // speak(speechMsgInput3.value, pitch[2] );
-          // speak(speechMsgInput4.value, pitch[3] );
-          // speak(speechMsgInput5.value, pitch[4] );
-          // speak(speechMsgInput6.value, pitch[5] );
+          if(speakThis1){
+            speak(speakThis1, pitch[0]);
+          }
+          if(speakThis2){
+            speak(speakThis2, pitch[1]);
+
+          }
+          if(speakThis3){
+            speak(speakThis3, pitch[2]);
+
+          }
+          if(speakThis4){
+            speak(speakThis4, pitch[3]);
+
+          }
+          if(speakThis5){
+            speak(speakThis5, pitch[4]);
+
+          }
+          if(speakThis6){
+            speak(speakThis6, pitch[5]);
+
+          }
+
+          if(speakThis6){
+            speak(speakThis6, pitch[6]);
+
+          }
+
+
+
+
+          // speak(speakThis1, pitch[0]);
+          // speak(speakThis2, pitch[1]);
+          // speak(speakThis3, pitch[2]);
+          // speak(speakThis4, pitch[3]);
+          // speak(speakThis5, pitch[4]);
+          // speak(speakThis6, pitch[5]);
+          // speak(speakThis6, pitch[6]);
 
       }
     }
@@ -206,7 +231,7 @@ function speak(text, pitch) {
             utterThis.rate = 1;
             // utterThis.pitch = parseFloat(pitchInput.value);
             utterThis.pitch = pitch;
-            console.log("talking");
+            // console.log("talking");
 
             // Set the text.
             utterThis.text = text;
